@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: yeseter.pdf
+all: yeseter.pdf hladka.pdf
 
 %.pdf: %.tex
 	pdflatex $<
