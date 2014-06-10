@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper]{report}
+
+% Babel, písmo, kódování 
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[babel=true]{microtype}
+
+\begin{document}
+\section*{Lokalizace softwaru}
+
+Lokalizace softwaru je činnost, při které se řetězce, které jsou zobrazovány v
+různých hlášeních, výstupech a v uživatelském rozhraní daného softwaru,
+překládají do jiných jazyků tak, aby s ním mohli pracovat i lidé, kteří
+původnímu jazyku nerozumějí. Lokalizace velmi úzce souvisí s pojmem
+internacionalizace.  Tento pojem označuje činnost, při které jsou  zdrojové
+kódy programů psány tak, aby bez dalších úprav správně pracovaly v různých
+národních prostředích se správnými lokalizovanými řetězci a se správnými
+národními zvyky, jako je způsob psaní času, data, měny, desetinné čárky a
+dalších. Pro obě činnosti se někdy používá termín globalizace. Všechny tři
+termíny se běžně zkracují nahrazením prostředních písmen v anglickém názvu
+jejich počtem: l10n, i18n a g11n.
+
+Internacionalizace, pokud se na ní myslí již v návrhu programu a pokud je
+správně implementována, nestojí mnoho peněz a nedělá tolik problémů. To je dáno
+zejména tím, že internacionalizace se provádí pouze jednou (bez ohledu na počet
+jazyků, do kterých se bude lokalizovat) a v dnešní době existuje velká podpora
+v systémových knihovnách a ve standardních knihovnách většiny jazyků. (O to více práce ale mají
+s internacionalizací výrobci operačních systémů).
+
+Naproti tomu lokalizace bývá velmi drahá a problémová. Její cena je téměř přímo
+úměrná počtu jazyků, do kterých chceme software lokalizovat. Většina nákladů na
+lokalizaci se spolkne samotný překlad, který většinou zajišťují externí
+dodavatelé.  Ale velmi mnoho peněz a úsilí stojí správa databází, ve kterých
+jsou lokalizované řetězce uloženy, testování lokalizovaného softwaru a oprava
+nalezených chyb. Jednou z mála činností s konstantními náklady v rámci
+lokalizace, je implementace a udržování lokalizačních nástrojů. 
+
+Mnoho softwarových firem, které chtějí dodávat svůj software globálně, proto
+řeší otázku, co všechno se vyplatí lokalizovat. V některých oblastech totiž
+není lokalizace tak důležitá a někdy je dokonce nežádoucí. Uživatelský software
+jako je například kancelářský balík Microsoft Office, se překládá témeř vždy. Systémové
+nástroje, se kterými pracují výhradně odborníci se však překládat nemusí a podle názoru některých se takový 
+software ani překládat nemá. Předpokládá se totiž, že odborníci umějí dobře anglicky a je tedy lepší, 
+když software zůstane v angličtině.
+
+Ve firmě Oracle pracuji v týmu Solaris Globalization, který má na starosti internacionalizaci a částečně i lokalizaci 
+operačního systému Solaris. Z velkou částí problémů zmiňovaných na přednášce jsem se setkal. 
+
+
+
+
+
+% prekladat pouze do nekterych jazyku, prekladat ma cenu zejmena uzivatelske
+% rozhranni pro bezne uzivatele, pokud prekladat  i command line interface, tak
+% pouze pro core jazyky. 
+
+% vlastni zkusennost, neni to jednoduche, je to drahe, vyuzivaji se translation
+% memory, cena za jednu vetu se urcuje podle podobnosti k nejblizsi bete v
+% prekladove pameti.  
+
+% prekladani dokumentace, nejcastejsi problemy, preklad neni synchronizovan s
+% anglickou verzi, overtranslation, testovani dokumentace,
+
+% bug s prejmenovanim Thajwanu
+
+
+
+\end{document}
