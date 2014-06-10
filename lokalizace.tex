@@ -17,54 +17,66 @@ původnímu jazyku nerozumějí. Lokalizace velmi úzce souvisí s pojmem
 internacionalizace.  Tento pojem označuje činnost, při které jsou  zdrojové
 kódy programů psány tak, aby bez dalších úprav správně pracovaly v různých
 národních prostředích se správnými lokalizovanými řetězci a se správnými
-národními zvyky, jako je způsob psaní času, data, měny, desetinné čárky a
-dalších. Pro obě činnosti se někdy používá termín globalizace. Všechny tři
-termíny se běžně zkracují nahrazením prostředních písmen v anglickém názvu
-jejich počtem: l10n, i18n a g11n.
+národními zvyky, jako je například způsob psaní času, data, měny, desetinné
+čárky a další. Pro obě činnosti se někdy používá souhrnný termín globalizace.
+Všechny tři termíny se běžně zkracují nahrazením prostředních písmen v
+anglickém názvu jejich počtem: l10n, i18n a g11n.
 
 Internacionalizace, pokud se na ní myslí již v návrhu programu a pokud je
 správně implementována, nestojí mnoho peněz a nedělá tolik problémů. To je dáno
 zejména tím, že internacionalizace se provádí pouze jednou (bez ohledu na počet
 jazyků, do kterých se bude lokalizovat) a v dnešní době existuje velká podpora
-v systémových knihovnách a ve standardních knihovnách většiny jazyků. (O to více práce ale mají
-s internacionalizací výrobci operačních systémů).
+v systémových knihovnách a ve standardních knihovnách většiny jazyků. (O to
+více práce ale mají s internacionalizací výrobci operačních systémů).
 
 Naproti tomu lokalizace bývá velmi drahá a problémová. Její cena je téměř přímo
-úměrná počtu jazyků, do kterých chceme software lokalizovat. Většina nákladů na
-lokalizaci se spolkne samotný překlad, který většinou zajišťují externí
-dodavatelé.  Ale velmi mnoho peněz a úsilí stojí správa databází, ve kterých
-jsou lokalizované řetězce uloženy, testování lokalizovaného softwaru a oprava
-nalezených chyb. Jednou z mála činností s konstantními náklady v rámci
-lokalizace, je implementace a udržování lokalizačních nástrojů. 
+úměrná počtu jazyků, do kterých chceme software lokalizovat, a množství řetězců
+v daném softwaru. Většina nákladů na lokalizaci se spolkne samotný překlad,
+který většinou zajišťují externí dodavatelé. Velmi mnoho peněz a úsilí
+stojí také správa databází, ve kterých jsou lokalizované řetězce uloženy, testování
+lokalizovaného softwaru a oprava nalezených chyb. Jednou z mála činností s
+konstantními náklady v rámci lokalizace, je implementace a udržování
+lokalizačních nástrojů. 
 
 Mnoho softwarových firem, které chtějí dodávat svůj software globálně, proto
 řeší otázku, co všechno se vyplatí lokalizovat. V některých oblastech totiž
 není lokalizace tak důležitá a někdy je dokonce nežádoucí. Uživatelský software
-jako je například kancelářský balík Microsoft Office, se překládá témeř vždy. Systémové
-nástroje, se kterými pracují výhradně odborníci se však překládat nemusí a podle názoru některých se takový 
-software ani překládat nemá. Předpokládá se totiž, že odborníci umějí dobře anglicky a je tedy lepší, 
-když software zůstane v angličtině.
+jako je například kancelářský balík Microsoft Office, se překládá témeř vždy.
+Systémové nástroje, se kterými pracují výhradně odborníci se však překládat
+nemusí a podle názoru některých se takový software ani překládat nemá.
+Předpokládá se totiž, že odborníci umějí dobře anglicky a je tedy lepší, když
+software zůstane v angličtině a používají se ustálené anglické odborné termíny.
+Jako programátor používám sám raději nelokalizovaný software v angličtině. Mimo
+jiné mi to umožňuje hledat chybové hlášky na diskusních fórech. I
+nelokalizovaný software by však měl být vždy internacionalizován, aby správně
+zobrazoval data, čas, měnu, ale aby také podporoval různé kódování textu, nebo
+alespoň univerzální kódování utf-8.
 
-Ve firmě Oracle pracuji v týmu Solaris Globalization, který má na starosti internacionalizaci a částečně i lokalizaci 
-operačního systému Solaris. Z velkou částí problémů zmiňovaných na přednášce jsem se setkal. 
+Vliv na to, co se bude lokalizovat a co ne, má zejména velikost trhu, používané
+písmo ale také tradice. Například v brazilském trhu není tolik obvyklé, aby
+programátoři a administrátoři uměli dobře anglicky.  Proto se zde mnohem více
+vyžaduje lokalizace softwaru a do brazilské portugalštiny se lokalizuje
+častěji, než do evropských jazyků, i když je brazilský trh menší, než ten
+evropský. Dokladem toho je i například zprovoznění brazilské mutace znalostního
+serveru Stackoverflow.com, který jinak, jak sami provozovatelé zdůrazňují,
+nechtějí provozovat v jiných jazycích, aby se znalosti a zkušenosti soustředily
+na jednom místě.
 
+Ve firmě Oracle pracuji v týmu Solaris Globalization, který má na starosti
+internacionalizaci a částečně i lokalizaci operačního systému Solaris.  Mnoho
+problémů s lokalizací a internacionalizací zmíněných na přednášce tak mohu
+jenom potvrdit a kdyby zde bylo více prostoru, tak bych přidal další problémy z
+vlastní zkušennosti.
 
-
-
-
-% prekladat pouze do nekterych jazyku, prekladat ma cenu zejmena uzivatelske
-% rozhranni pro bezne uzivatele, pokud prekladat  i command line interface, tak
-% pouze pro core jazyky. 
-
-% vlastni zkusennost, neni to jednoduche, je to drahe, vyuzivaji se translation
-% memory, cena za jednu vetu se urcuje podle podobnosti k nejblizsi bete v
-% prekladove pameti.  
-
-% prekladani dokumentace, nejcastejsi problemy, preklad neni synchronizovan s
-% anglickou verzi, overtranslation, testovani dokumentace,
-
-% bug s prejmenovanim Thajwanu
-
-
+Většina operačního systému Solaris se překládá pouze do několika základních
+jazyků (zjednodušená a tradiční čínština, japonština, korejština,
+francouzština, němčina, španělština, italština a brazilská portugalština).
+Některé části systému (zejména grafické prostředí a programy) se přebírají z
+komunitního vývoje se všemi dostupnými překlady. Některé části systému, jako je
+například dokumentace se naopak nepřekládají ani do všech základních jazyků.
+Abych se oklikou vrátil zpět k přednášce, velmi mě překvapilo, že se operační
+systém firmy IBM, což je vlastně přímý konkurent systému Solaris, lokalizuje do
+češtiny. Český trh je velmi malý a administrátoři jsou zde zvyklí pracovat s
+nelokalizovaným softwarem.
 
 \end{document}
