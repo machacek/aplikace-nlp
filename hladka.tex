@@ -8,47 +8,74 @@
 \usepackage[babel=true]{microtype}
 
 \begin{document}
-\section*{Čapek}
-
--gamifikace, crowdsourcing, dobry napad, resi dve veci, potrebuje lepe dotahnout anotacni
-prostredi, i kdyby fungovalo dobre, je stale moc slozite, pro skolaky casto slozite vety.  
-Mozna by to chtelo nechat naprogramovat profesionalne, aby nezapadla dorbra myslenka. Chtelo by to nejake
-intuitivnejsi a prehlednejsi  ovladani, napriklad vytvoreni zavislosti tazenim z jednoho uzlu do druheho,
-to hraje velmi dulezitou roli a velmi to ovlivni celkovy dojem. 
 
 \section*{Rozpoznávání L1 jazyka}
 
 Paní doktorka Hladká řešila tuto úlohu v rámci soutěže Native Language
 Identification (NLI) Shared Task 2013.  Cílem této úlohy je rozpoznat mateřský
-jazyk autora anglicky napsané eseje.  Problém se tedy dá formulovat jako úloha
-klasifikace strojového učení a jak se dalo očekávat, všichni účastníci soutěže
-to také řešili pomocí technik strojového učení. 
+jazyk autora anglicky napsané eseje.  Myslím, že je to velmi zajímavý problém
+pro inženýry strojového učení i pro lingvisty, ale nevidím v tom žádné
+praktické využití. 
 
-Myslím, že je to velmi zajímavý problém ze dvou hledisek. Z pohledu inženýra
-strojového učení se jedná o úlohu, která je velmi složitá na řešení (není-li
-nemožná) pro člověka. Přitom je k dispozici velmi málo trénovacích pozorování s
-velkým množstvím možných rysů. Jazyků, mezi kterými klasifikátor vybírá je také
-hodně.
+Problém se tedy dá formulovat jako úloha klasifikace strojového učení a jak se
+dalo očekávat, všichni účastníci soutěže to pomocí technik strojového učení
+řešili. K problému se dá však přistoupit dvěma způsoby. 
 
-Z pohledu lingvisty je tento problém také velmi zajímavý.  I pro dobrého
-lingvistu je téměř nemožné rozpoznat mateřský jazyk autora eseje.  Pro úspěšné
-řešení tohoto problému je podle mého názoru potřeba najít souvislosti mezi používáním 
-mateřského jazyka (L1) a jazyka, který se učíme jako druhý. Jinými slovy, lingvista
-by měl zjistit, jakým způsobem ovlivňuje mateřský jazyk používání druhého jazyka.
+První způsob je čisté strojové učení. Vygeneruje se co nejvíce rysů, z těch se
+poté vyberou užitečné rysy a pak už se jen zkouší všechny možné metody
+strojového učení a vybere se ta, která dává na dev-testu nejlepší výsledky.
+Úloha je jistě zajímavá i z tohoto čistě inženýrského pohledu: k dispozici je
+málo trénovacích pozorování, rysů je hodně a jazyků, mezi kterými klasifikátor
+vybírá je také hodně. Přitom je to úloha, která je velmi složitá (není-li
+nemožná) na řešení i pro člověka. 
 
+Jako druhý způsob řešení vidím to, že se nejdříve využijí nějaké poznatky z
+lingvistiky nebo psychologie. Je potřeba najít souvislosti mezi používáním
+mateřského jazyka (L1) a jazyka, který se učíme jako druhý (L2). Jinými slovy,
+lingvista by měl zjistit, jakým způsobem ovlivňuje mateřský jazyk používání
+druhého jazyka a na základě toho extrahovat signifikantní rysy. Zbytek už je
+pochopitelně opět strojové učení podobné jako v prvním případě. 
 
+Z prezentace paní doktorky Hladké se mi zdálo, že její kolektiv přistoupil k
+problému pouze prvním způsobem a nehledal nějaké hlubší souvislosti. Na její
+obranu je však potřeba říci, že to podobným způsobem řešili i ostatní
+soutěžící. 
 
-zajimava uloha pro lingvisty, otazka, zda to ma nejake prakticke vyuziti
+Závěrem dodám svůj návrh na řešení problému, který by asi z různých důvodů
+nefungoval, ale napadl mě jako první. Na anglických textech neanglických
+rodilých mluvčích by se natrénovaly jazykové modely, pro každý L1 jazyk
+samostatný model.  Pro klasifikovanou esej by se poté spočítala pravděpodobnost
+vygenerování každým z natrénovaných jazykových modelů a jako L1 jazyk by se
+vybral ten s nejvyšší pravděpodobností. Toto řešení by však vyžadovalo velmi
+mnoho trénovacích dat. 
 
-otazka, zda by expert dokazal ulohu resit
+\section*{Čapek}
 
--pouze feature engineering, cekal bych nejake zajimavejsi rysy nebo originalni zpusoby reseni. 
+Program Čapek řeší dvě věci, je to pomůcka pro žáky a učitele na procvičování
+větných rozborů a zároveň tento nástroj slouží pro získávání nových anotací do
+závislostního korpusu. Je to výborný nápad, který využívá fenoménu zvaného
+crowdsourcing. Mám k tomu dvě poznámky.
 
-napad: na jednotlivych tridach natrenovat language modely, pomoci nich pak spocitat pravdepodobnost textu. Nebo aplikovat
-model zasumeneho signalu, tedy myslet si, ze autor napsatl esej v jazyce L1, pak se ale esej v zasumenem kanalu prelozila na jazyk L2.
+S odstupem času mi není jasné, zda bude anotované věty někdo po žácích
+kontrolovat. Asi by mělo smysl, kdyby to kontroloval učitel, ale vzhledem k
+tomu, že každý žák anotuje jiné věty, to bude pro učitele velmi náročné. 
 
-
-
-
+Další poznámka se týká anotačního prostředí. Úspěšnost celého projektu závisí
+na komfortnosti anotační aplikace.  Ta musí být jednoduchá a přehledná, její
+ovládání musí být intuitivní. Žáci i učitelé musí hned vědět, jak v aplikaci
+vytvářet větné rozbory. Z aplikace, kterou jsme testovali na cvičení, však
+takový pocit nemám. Zásadním nedostatkem aplikace byla nemožnost kroku zpět,
+zejména při spojování uzlů. Toto je zvlášť nepříjemné, když se závislost dvou
+uzlů vytváří podobným způsobem jako, když se dva uzly spojují. Velmi často se
+mi stávalo, že jsem dva uzly spojil, místo toho abych mezi nimi vytvořil
+závislost. Jednu větu jsem kvůli tomu musel anotovat asi čtyřikrát. I bez
+tohoto nedostatku se mi však aplikace zdá stále neintuitivní. Dokážu si
+například představit, že se závislosti budou vytvářet tažení z jednoho uzlu do
+druhého. Vše by mělo být doplněno názornou vizuální (možná i zvukovou) odezvou,
+aby si uživatel byl jistý, že děla to, co chce. Aplikace by v ideálním případě
+měla fungovat stejně ve webovém prohlížeči i na tabletu. Stálo by za zvážení,
+zda by se taková aplikace neměla nechat vytvořit buď profesionálně externí
+firmou, nebo v rámci většího softwarového projektu s důrazem na uživatelskou
+přívětivost a moderní HTML technologie. 
 
 \end{document}
