@@ -8,7 +8,7 @@
 \usepackage[babel=true]{microtype}
 
 \begin{document}
-\section*{Automatická disambiguace pomocí Corpus Pattern Analysis}
+\section*{Automatická disambiguace podle Corpus Pattern Analysis}
 
 Vincent Kříž a jeho tým provádějí automatickou lexikální disambiguaci na
 pilotním vzorku třiceti anglických sloves. Místo obvyklých slovníkových definic
@@ -16,10 +16,11 @@ však predikují vzory slovesných užití, takzvané patterns, které vycházej
 metody Corpus Pattern Analysis. Tato lexikografická metoda shlukuje výskyty
 sloves pomocí morfosyntaktických, lexikálních a sémantických podobností svého
 kontextu namísto abstraktních slovníkových definic. Těžištěm práce Vincenta
-Kříže byl takzvaný Feature Engineering, tedy výběr správných rysů a metod pro
-strojové učení.
-
-% Tady asi nejake poznamky o tailored rysech a dalsi podrobnosti.
+Kříže však je takzvaný Feature Engineering, tedy výběr správných rysů a metod
+pro strojové učení. Kromě základních morfosyntaktických a sémantických rysů se
+dále v práci zkoušejí rysy ušité na míru jednotlivým slovesům.  Procedura pro
+extrakci těchto rysů je plně automatická a je založena na analýze vzorů užití
+daného slovesa.
 
 S disambiguací významů slov mám dokonce hned dvě zkušennosti ze školních
 projektů.  Jako zápočtovou práci na předmět Úvod do strojového učení jsme měli
@@ -30,9 +31,9 @@ podobné těm, které použil Vincent Kříž ve svém modelu U1. Z morfologick�
 to konkrétně byly lemma, morfologická značka a forma cílového slova a dále
 lemmata a morfologické značky okolních slov.  Ze syntaktických rysů to byly
 analytické funkce cílového slova a jeho rodiče. Z extrahovaných rysů jsem dále
-vybral podmnožinu pomocí dopředného hladového algoritmu. Vyzkoušel jsem různé
-metody strojového učení a podobně jako Vincentovi mi nejlépe vycházela metoda
-SVM.
+vybral podmnožinu pomocí dopředného hladového algoritmu podobně, jako to dělal
+ve své práci Vincent. Vyzkoušel jsem různé metody strojového učení a podobně
+jako Vincentovi mi nejlépe vycházela metoda SVM.
 
 Druhou zkušennost s touto problematikou jsem získal při práci na úkolu pro
 předmět lingvistické zdroje dat. Ve dvojicích jsme si měli vymyslet nějaký
@@ -44,8 +45,11 @@ ani pro lidi a nelze dosáhnout o mnoho lepších výsledků ani automaticky. Je
 však pravda, že celkem nízká mezianotátorská shoda byla způsobena vágností a
 překryvem některých slovníkových definic z použitého slovníku. S metodou Corpus
 Pattern Analysis, kterou použil Vincent Kříž ve své práci, nemám žádné
-zkušennosti a je tak docela možné, že na ní mezianotátorská shoda dosahuje
-mnohem lepších hodnot.
+zkušennosti a je docela možné, že na ní mezianotátorská shoda dosahuje mnohem
+lepších hodnot.
+
+Na těchto příkladech jsem chtěl ukázat, že disambiguace slovních významů je
+poměrně složitá disciplína, ale základní postupy řešení jsou vždy stejné.
 
 
 
